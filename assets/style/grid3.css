@@ -48,7 +48,6 @@ article{
     width: 14.28571429%;
     background-color: white;
     position: relative;
-    padding: 3px;
     height: 16.66666%;
     border-right: solid 1px var(--grid-line-color);
     border-bottom: solid 1px var(--grid-line-color);
@@ -59,7 +58,7 @@ article:hover{
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
-article .day-label{
+article .day-label2{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,20 +68,25 @@ article .day-label{
     background-color: white;
     border: solid 1px var(--grid-line-color);
 }
-article .day-label.feriado{
-    border: solid 1px red;
-}
-article .num-apontamentos{
+article .day-label{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
+    width: 2.2em;
+    left: calc(50% - 1.1em);
     height: 2.2em;
     top: calc(50% - 1.1em);
-    width: 100%;
-    left: 0;
-    text-align: center;
+    background-color: white;
+    border: solid 1px var(--grid-line-color);
+}
+article .day-label.feriado{
+    border: solid 1px red;
+}
+article .num-apontamentos{
     padding: 5px;
+    border: solid 1px var(--grid-line-color);
 }
 article.other-month{
     color: #999;
