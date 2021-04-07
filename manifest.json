@@ -1,0 +1,9 @@
+{
+    "short_name": "First App",
+    "name": "Testing my first PWA App",
+    "icons": [],
+    "start_url": "/?source=pwa",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/"
+}
