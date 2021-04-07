@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 1.6vmax;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --grid-line-color: #d7d7d7;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main .toolbar{
+    padding: 3px;
+    border: 1px solid blue;
+    
+}
+main .options{
+    border: 1px solid green;
+}
+main .grid{
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--grid-line-color);
+    border-left: 1px solid var(--grid-line-color);
+    flex: 1;
+}
+@media only screen and (orientation: portrait){
+    main .toolbar{
+        height: max(6vh, 6vw);
+    }
+    main .options{
+        height: max(6vh, 6vw);
+        min-height: 60px;
+    }
+    main .grid{
+        /*height: 88vh;*/
+    }
+}
+article{
+    width: 14.28571429%;
+    background-color: white;
+    position: relative;
+    padding: 3px;
+    height: 16.66666%;
+    overflow-y: scroll;
+    border-right: solid 1px var(--grid-line-color);
+    border-bottom: solid 1px var(--grid-line-color);
+}
+article .day-label{
+    color: #888;
+}
+article .info-label{
+    font-weight: lighter;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    position: relative;
+}
+article .info-label:nth-child(even){
+    background-color: #f7f7f7;
+}
