@@ -1,7 +1,6 @@
 *{
     margin: 0px;
     box-sizing: border-box;
-    font-size: min(13px, 1.6vmax);
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -14,17 +13,26 @@ main{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    font-size: min(13px, 1.6vmax);
 }
 
 main .toolbar{
     padding: 3px;
-    border: 1px solid blue;
-    height: 6vmax;
+    /*border: 1px solid blue;*/
+    height: auto;
     text-align: center;
+    background-color: #e1e1e1;
+    
 }
 main .options{
-    border: 1px solid green;
     height: 6vmax;
+    background-color: #e1e1e1;
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4);
 }
 main .grid{
     flex: 1;
