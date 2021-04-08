@@ -7,10 +7,10 @@ self.addEventListener('install', function(event) {
     );
 });
 
-self.addEventListener('fetch', function(event) {
-    console.log('Fetch!');
-});
-
 self.addEventListener('activate', function(event) {
     console.log('Activated!');
+});
+
+self.addEventListener('fetch', function(event) {
+    console.log('Fetch!');
 });
