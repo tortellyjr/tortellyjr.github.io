@@ -8,5 +8,5 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-    console.log('Fetch!');
+    console.log('Fetch! ' + event.request);
 });
