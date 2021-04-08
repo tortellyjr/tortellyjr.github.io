@@ -6,3 +6,7 @@ self.addEventListener('install', function(event) {
         console.log('Installed')
     );
 });
+
+self.addEventListener('fetch', function(event) {
+    console.log('Fetch!');
+});
