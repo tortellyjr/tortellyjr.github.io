@@ -1,7 +1,7 @@
 *{
     margin: 0px;
     box-sizing: border-box;
-    font-size: 1.6vmax;
+    font-size: min(13px, 1.6vmax);
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -79,7 +79,7 @@ article .horario{
     position: absolute;
     width: 100%;
     left: 0;
-    background-color: rgba(100, 0, 0, 0.3);
+    background-color: rgba(100, 0, 0, 0.1);
     border-bottom: dashed 1px rgba(100, 0, 0, 0.3);
 }
 
