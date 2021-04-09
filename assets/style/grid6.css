@@ -74,18 +74,25 @@ main{
     padding: 3px;
     background-color: floralwhite;
     position: relative;
-    color: gray;
 }
 
 .calendar-container .month-grid-container .month-grid .month-grid-day .month-grid-day-label{
-    font-size: 0.6rem;
-    border: solid 1px #ddd;
+    font-size: max(0.65rem, 1vmax);
+    /*border: solid 1px #ddd;*/
     border-radius: 50%;
     padding: 2px;
+    color: black;
 }
-.calendar-container .month-grid-container .month-grid .month-grid-day .dom{
-    border: solid 1px red;
+.calendar-container .month-grid-container .month-grid .month-grid-day[data-week-day="dom"] .month-grid-day-label{
     color: red;
+}
+.calendar-container .month-grid-container .month-grid .month-grid-day[data-holliday] .month-grid-day-label{
+    background-color: red;
+    color: white;
+}
+.calendar-container .month-grid-container .month-grid .month-grid-day[data-appointment] .month-grid-day-label{
+    /*border: solid 1px red;*/
+    font-weight: bold;
 }
 @media only screen and (orientation: portrait){
     .calendar-container .month-grid-container .month-grid .month-grid-day .appointment{
@@ -102,4 +109,11 @@ main{
 .calendar-container .month-grid-container .month-grid .month-grid-day .appointment{
     position: absolute;
     background-color: rgba(60, 0, 0, 0.5);
+}
+
+.calendar-container .options{
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: center;
 }
