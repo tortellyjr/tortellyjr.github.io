@@ -71,6 +71,7 @@ main{
     scroll-snap-align: center;
 }
 .calendar-container .month-grid-container .month-grid .month-grid-day{
+    position: relative;
     padding: 3px;
     background-color: floralwhite;
     position: relative;
@@ -116,4 +117,14 @@ main{
     font-size: 0.8rem;
     color: #aaa;
     text-align: center;
+}
+
+.calendar-container .month-grid-container .month-grid .other-month::after{
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
 }
