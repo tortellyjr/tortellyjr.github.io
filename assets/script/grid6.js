@@ -28,7 +28,7 @@ months.forEach((month, index) => {
 });
 
 function updateMonthName(monthElement){
-    var monthName = monthElement.getAttribute('data-month');
+    var monthName = monthElement.getAttribute('data-month-name');
     var monthParent = monthElement.parentNode;
     var index = Array.from(monthParent.children).indexOf(monthElement);
     console.log(monthName + ', ' + index);
