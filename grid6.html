@@ -4,10 +4,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <link rel="stylesheet" href="assets/style/grid6.css">
         <title>Grid Test</title>
+        <!--script src="assets/script/grid6.js"></script-->
     </head>
     <body>
         <main>
-            <section class="month-label">MARÇO</section>
+            <section class="month-label" id="month-label">MARÇO</section>
             <section class="week-days">
                 <div>SEG</div>
                 <div>TER</div>
@@ -17,8 +18,8 @@
                 <div>SÁB</div>
                 <div>DOM</div>
             </section>
-            <section class="calendar-container">
-                <div class="month-grid">
+            <section class="calendar-container" id="calendar">
+                <div class="month-grid" data-month="Março">
                     <div class="month-grid-day">1</div>
                     <div class="month-grid-day">2</div>
                     <div class="month-grid-day">3</div>
@@ -62,7 +63,7 @@
                     <div class="month-grid-day">10</div>
                     <div class="month-grid-day">11</div>
                 </div>
-                <div class="month-grid">
+                <div class="month-grid" data-month="Abril">
                     <div class="month-grid-day">29</div>
                     <div class="month-grid-day">30</div>
                     <div class="month-grid-day">31</div>
@@ -106,7 +107,7 @@
                     <div class="month-grid-day">08</div>
                     <div class="month-grid-day">09</div>
                 </div>
-                <div class="month-grid">
+                <div class="month-grid" data-month="Maio">
                     <div class="month-grid-day">26</div>
                     <div class="month-grid-day">27</div>
                     <div class="month-grid-day">28</div>
@@ -153,5 +154,6 @@
             </section>
             <section class="options">OPTIONS</section>
         </main>
+        <script src="assets/script/grid6.js"></script>
     </body>
 </html>
