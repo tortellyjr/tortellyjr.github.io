@@ -1,0 +1,64 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --grid-line-color: #e7e7e7;
+}
+
+body {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.week-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: floralwhite;
+    border-top: solid 1px floralwhite;
+    border-left: solid 1px #333;
+    border-right: solid 1px #333;
+}
+.week-days div{
+    padding: 1px;
+    text-align: center;
+    background-color: #333;
+}
+.calendar-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.calendar-container .month-grid {
+    flex: 0 0 auto;
+    width: 100%;
+    border: solid 1px #333;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    scroll-snap-align: center;
+}
+.calendar-container .month-grid .month-grid-day{
+    padding: 3px;
+    background-color: floralwhite;
+    position: relative;
+    color: gray;
+}

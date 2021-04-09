@@ -1,0 +1,151 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --grid-line-color: #e7e7e7;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: min(13px, 1.6vmax);
+}
+
+main .options{
+    height: 6vmax;
+    background-color: #e1e1e1;
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4);
+}
+main .calendar-area{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px red;
+    overflow-x: scroll;
+}
+main .calendar-area .month{
+    border: 5px solid green;
+    display: block;
+    height: 100%;
+    width: 100vw;
+}
+
+
+
+
+main .grid{
+    width: 100%;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto repeat(6, 1fr);
+    gap: 1px;
+}
+
+@media only screen and (orientation: portrait){
+    main .toolbar{
+    }
+    main .options{
+    }
+    main .grid{
+    }
+}
+article{
+    background-color: #f1f1f1;
+    cursor: pointer;
+    color: #aaa;
+    padding: 5px;
+    position: relative;
+}
+article:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+article.current-month{
+    color: black;
+}
+article.day-week{
+    display: block;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    color: black;
+}
+article .day-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 2.2em;
+    left: calc(50% - 1.1em);
+    height: 2.2em;
+    top: calc(50% - 1.1em);
+    background-color: white;
+    border: solid 1px var(--grid-line-color);
+}
+article .horario{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: rgba(100, 0, 0, 0.15);
+    /*border-bottom: dashed 1px rgba(100, 0, 0, 0.3);*/
+}
+article .horario:nth-child(even){
+    background-color: rgba(100, 0, 0, 0.3);
+}
+
+@media only screen and (orientation: portrait){
+    article .horario{
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
+@media only screen and (orientation: landscape){
+    article .horario{
+        height: 100% !important;
+        top: 0 !important;
+    }
+}
+/*article #h1{
+    top: 39.13%;
+    height: 4.34%;
+    left: 39.13%;
+    width: 4.34%;
+}
+article #h2{
+    top: 60.86%;
+    height: 6.52%;
+    left: 60.86%;
+    width: 6.52%;
+}
+article #h3{
+    top: 86.95%;
+    height: 8.69%;
+    left: 86.95%;
+    width: 8.69%;
+}*/
+
+/*article #h1{
+    top: 39.13%;
+    height: 4.34%;
+}
+article #h2{
+    top: 60.86%;
+    height: 6.52%;
+}
+article #h3{
+    top: 86.95%;
+    height: 8.69%;
+}*/
