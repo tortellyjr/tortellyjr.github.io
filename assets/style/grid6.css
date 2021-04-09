@@ -79,7 +79,7 @@ main{
 .calendar-container .month-grid-container .month-grid .month-grid-day .month-grid-day-label{
     font-size: max(0.65rem, 1vmax);
     /*border: solid 1px #ddd;*/
-    border-radius: 50%;
+    border-radius: 25%;
     padding: 2px;
     color: black;
 }
@@ -91,8 +91,8 @@ main{
     color: white;
 }
 .calendar-container .month-grid-container .month-grid .month-grid-day[data-appointment] .month-grid-day-label{
-    /*border: solid 1px red;*/
-    font-weight: bold;
+    /*border: solid 1px #bbb;
+    font-weight: normal;*/
 }
 @media only screen and (orientation: portrait){
     .calendar-container .month-grid-container .month-grid .month-grid-day .appointment{
