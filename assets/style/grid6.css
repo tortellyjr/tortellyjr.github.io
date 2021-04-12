@@ -114,8 +114,8 @@ main{
 
 .calendar-container .month-grid-container .month-grid .month-grid-day .appointment{
     position: absolute;
-    width: 100% !important;
-    left: 0% !important;
+    width: calc(100% - 4px) !important;
+    left: 2px !important;
     background-color: rgba(60, 0, 0, 0.3);
 }
 

@@ -26,9 +26,14 @@ const appointments = {
         { "start":"09:00",
             "end":"10:00",
             "subject":"Academia" },
-        { "start":"12:15",
+        { "start":"12:00",
             "end":"18:00",
             "subject":"Reunião" }
+    ],
+    "2021-04-05":[
+        { "start":"14:30",
+            "end":"18:30",
+            "subject":"Academia" }
     ],
     "2021-07-02":[
         { "start":"09:00",
