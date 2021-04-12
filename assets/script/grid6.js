@@ -22,7 +22,7 @@ hollidaysPT = {
 var currentVisibleMonth = '';
 
 const appointments = {
-    "2021-04-02":[
+    "2021-04-01":[
         { "start":"09:00",
             "end":"10:00",
             "subject":"Academia" },

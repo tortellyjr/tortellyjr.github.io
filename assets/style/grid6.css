@@ -86,13 +86,13 @@ main{
 .calendar-container .month-grid-container .month-grid .month-grid-day[data-week-day="dom"] .month-grid-day-label{
     color: red;
 }
+.calendar-container .month-grid-container .month-grid .month-grid-day[data-today] .month-grid-day-label{
+    border: solid 2px black;
+    /*background-color: darkgreen;
+    color: white;*/
+}
 .calendar-container .month-grid-container .month-grid .month-grid-day[data-holliday] .month-grid-day-label{
     background-color: red;
-    color: white;
-}
-.calendar-container .month-grid-container .month-grid .month-grid-day[data-today] .month-grid-day-label{
-    /*border: solid 1px #999;*/
-    background-color: darkgreen;
     color: white;
 }
 .calendar-container .month-grid-container .month-grid .month-grid-day[data-appointment] .month-grid-day-label{
