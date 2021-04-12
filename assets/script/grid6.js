@@ -23,6 +23,17 @@ const appointments = {
         { "start":"15:00",
             "end":"16:30",
             "subject":"Teste" }
+    ],
+    "2021-08-04":[
+        { "start":"10:00",
+            "end":"12:00",
+            "subject":"Aula" },
+        { "start":"14:00",
+            "end":"16:00",
+            "subject":"Aula" },
+        { "start":"16:00",
+            "end":"18:00",
+            "subject":"Dentista" }
     ]
 }
 
@@ -110,6 +121,7 @@ function timeDiff(time1, time2){
 calendar = document.getElementById('calendar');
 
 function newDayElement(date, currentMonth){
+    today = new Date();
     // <div class="month-grid-day"><span class="month-grid-day-label">01</span></div>
     var dayElement = document.createElement('div');
     dayElement.classList.add('month-grid-day');
@@ -117,6 +129,12 @@ function newDayElement(date, currentMonth){
         dayElement.classList.add('other-month');
     if (date.getDay() == 0) // If is sunday, includ the data-week-day attribute
         dayElement.setAttribute('data-week-day', 'dom');
+    
+    today.setHours(0, 0, 0, 0);
+    date.setHours(0, 0, 0, 0);
+    if (date.toString() === today.toString()){
+        dayElement.setAttribute('data-today', 'true');
+    }
     id = date.getFullYear();
     id += '-' + (date.getMonth()+1).toString().padStart(2, '0');
     id += '-' + date.getDate().toString().padStart(2, '0');

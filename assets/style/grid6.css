@@ -90,6 +90,11 @@ main{
     background-color: red;
     color: white;
 }
+.calendar-container .month-grid-container .month-grid .month-grid-day[data-today] .month-grid-day-label{
+    /*border: solid 1px #999;*/
+    background-color: darkgreen;
+    color: white;
+}
 .calendar-container .month-grid-container .month-grid .month-grid-day[data-appointment] .month-grid-day-label{
     /*border: solid 1px #bbb;
     font-weight: normal;*/
