@@ -3,6 +3,22 @@ const container = document.getElementById('calendar');
 const monthNamesPT = [
     "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
+
+hollidaysPT = {
+    "2021-01-01":"Dia de Ano Novo", 
+    "2021-04-02":"Sexta-Feira Santa", 
+    "2021-04-04":"Páscoa", 
+    "2021-04-25":"Dia da Liberdade", 
+    "2021-05-01":"Dia do Trabalhador", 
+    "2021-06-03":"Corpo de Deus", 
+    "2021-06-10":"Dia de Portugal",
+    "2021-08-15":"Assunção de Nossa Senhora",
+    "2021-10-05":"Implantação da República",
+    "2021-11-01":"Dia de Todos os Santos",
+    "2021-12-01":"Restauração da Independência",
+    "2021-12-08":"Dia da Imaculada Conceição",
+    "2021-12-25":"Natal"};
+
 var currentVisibleMonth = '';
 
 const appointments = {
@@ -135,15 +151,18 @@ function newDayElement(date, currentMonth){
     if (date.toString() === today.toString()){
         dayElement.setAttribute('data-today', 'true');
     }
+    
     id = date.getFullYear();
     id += '-' + (date.getMonth()+1).toString().padStart(2, '0');
     id += '-' + date.getDate().toString().padStart(2, '0');
     dayElement.id = id;
+    if (!isEmpty(hollidaysPT[id]))
+        dayElement.setAttribute('data-holliday', 'true');
 
     // Label
     var dayLabelElement = document.createElement('span');
     dayLabelElement.setAttribute('class', 'month-grid-day-label');
-    dayLabelElement.innerText = date.getDate();
+    dayLabelElement.innerText = date.getDate().toString().padStart(2, '0');
     dayElement.appendChild(dayLabelElement);
     // Label
 
@@ -205,11 +224,11 @@ function makeMonthGrid(date){
 
     // First day of the grid: the first monday before the first month day (if the first month day is not monday)
     firstDay = new Date(date.getYear(), date.getMonth(), 1);
-    if (date.getDay() == 0)
+    /*if (date.getDay() == 0)
         firstDay = decDate(date, 6);
     else
-        firstDay = decDate(date, date.getDay()-1);
-    
+        firstDay = decDate(date, date.getDay()-1);*/
+        firstDay = decDate(date, date.getDay());
     // The drid has 42 elements: 7 week days and 6 lines - 7 x 6 = 42
     i = 0;
     dateAux = new Date(firstDay);
