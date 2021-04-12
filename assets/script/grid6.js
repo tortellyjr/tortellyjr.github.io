@@ -6,7 +6,7 @@ const monthNamesPT = [
 var currentVisibleMonth = '';
 
 const appointments = {
-    "20210603":[
+    "20210402":[
         { "start":"09:00",
             "end":"10:00",
             "subject":"Academia" },
@@ -18,6 +18,11 @@ const appointments = {
         { "start":"09:00",
             "end":"11:24",
             "subject":"Academia" }
+    ],
+    "20210708":[
+        { "start":"15:00",
+            "end":"16:30",
+            "subject":"Teste" }
     ]
 }
 
@@ -157,6 +162,11 @@ function newMonthElement(date){
     // <div class="month-grid" data-month-name="Março">
 }
 
+makeMonthGrid(new Date('2021-1-1'));
+makeMonthGrid(new Date('2021-2-1'));
+makeMonthGrid(new Date('2021-3-1'));
+makeMonthGrid(new Date('2021-4-1'));
+makeMonthGrid(new Date('2021-5-1'));
 makeMonthGrid(new Date('2021-6-1'));
 makeMonthGrid(new Date('2021-7-1'));
 makeMonthGrid(new Date('2021-8-1'));
@@ -164,6 +174,15 @@ makeMonthGrid(new Date('2021-9-1'));
 makeMonthGrid(new Date('2021-10-1'));
 makeMonthGrid(new Date('2021-11-1'));
 makeMonthGrid(new Date('2021-12-1'));
+
+today = new Date();
+currentMonthId = today.getFullYear().toString() + today.getMonth().toString().padStart(2, '0');
+currentVisibleMonth = document.getElementById(currentMonthId);
+//console.log(currentVisibleMonth);
+if (currentVisibleMonth != undefined){
+    console.log(currentMonthId);
+    currentVisibleMonth.scrollIntoView();
+}
 
 function makeMonthGrid(date){
     monthElement = newMonthElement(date);
