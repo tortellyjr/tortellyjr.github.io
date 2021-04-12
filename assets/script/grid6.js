@@ -197,7 +197,6 @@ today = new Date();
 currentMonthId = today.getFullYear().toString() + '-' + today.getMonth().toString().padStart(2, '0');
 currentVisibleMonth = document.getElementById(currentMonthId);
 if (currentVisibleMonth != undefined){
-    console.log(currentMonthId);
     currentVisibleMonth.scrollIntoView();
 }
 
