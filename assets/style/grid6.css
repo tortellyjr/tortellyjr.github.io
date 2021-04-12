@@ -116,6 +116,7 @@ main{
     position: absolute;
     width: calc(100% - 4px) !important;
     left: 2px !important;
+    border-radius: 2px;
     background-color: rgba(60, 0, 0, 0.3);
 }
 

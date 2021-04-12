@@ -27,6 +27,9 @@ const appointments = {
             "end":"10:00",
             "subject":"Academia" },
         { "start":"12:00",
+            "end":"17:00",
+            "subject":"Reunião" },
+        { "start":"17:00",
             "end":"18:00",
             "subject":"Reunião" }
     ],
