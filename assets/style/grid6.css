@@ -74,7 +74,6 @@ main{
     position: relative;
     padding: 3px;
     background-color: floralwhite;
-    position: relative;
 }
 
 .calendar-container .month-grid-container .month-grid .month-grid-day .month-grid-day-label{

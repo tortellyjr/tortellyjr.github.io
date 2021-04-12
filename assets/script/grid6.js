@@ -6,7 +6,7 @@ const monthNamesPT = [
 var currentVisibleMonth = '';
 
 const appointments = {
-    "20210402":[
+    "2021-04-02":[
         { "start":"09:00",
             "end":"10:00",
             "subject":"Academia" },
@@ -14,12 +14,12 @@ const appointments = {
             "end":"18:00",
             "subject":"Reunião" }
     ],
-    "20210702":[
+    "2021-07-02":[
         { "start":"09:00",
             "end":"11:24",
             "subject":"Academia" }
     ],
-    "20210708":[
+    "2021-07-08":[
         { "start":"15:00",
             "end":"16:30",
             "subject":"Teste" }
@@ -118,8 +118,8 @@ function newDayElement(date, currentMonth){
     if (date.getDay() == 0) // If is sunday, includ the data-week-day attribute
         dayElement.setAttribute('data-week-day', 'dom');
     id = date.getFullYear();
-    id += (date.getMonth()+1).toString().padStart(2, '0');
-    id += date.getDate().toString().padStart(2, '0');
+    id += '-' + (date.getMonth()+1).toString().padStart(2, '0');
+    id += '-' + date.getDate().toString().padStart(2, '0');
     dayElement.id = id;
 
     // Label
@@ -156,7 +156,7 @@ function newMonthElement(date){
     monthName = monthNamesPT[date.getMonth()];
     monthElement.setAttribute('data-month-name', monthName);
     id = parseInt(date.getFullYear());
-    id += date.getMonth().toString().padStart(2, '0');
+    id += '-' + date.getMonth().toString().padStart(2, '0');
     monthElement.setAttribute('id', id);
     return monthElement;
     // <div class="month-grid" data-month-name="Março">
@@ -176,9 +176,8 @@ makeMonthGrid(new Date('2021-11-1'));
 makeMonthGrid(new Date('2021-12-1'));
 
 today = new Date();
-currentMonthId = today.getFullYear().toString() + today.getMonth().toString().padStart(2, '0');
+currentMonthId = today.getFullYear().toString() + '-' + today.getMonth().toString().padStart(2, '0');
 currentVisibleMonth = document.getElementById(currentMonthId);
-//console.log(currentVisibleMonth);
 if (currentVisibleMonth != undefined){
     console.log(currentMonthId);
     currentVisibleMonth.scrollIntoView();
