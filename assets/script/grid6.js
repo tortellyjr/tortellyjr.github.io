@@ -10,13 +10,13 @@ const appointments = {
         { "start":"09:00",
             "end":"10:00",
             "subject":"Academia" },
-        { "start":"12:00",
+        { "start":"12:15",
             "end":"18:00",
             "subject":"Reunião" }
     ],
     "20210702":[
         { "start":"09:00",
-            "end":"10:00",
+            "end":"11:24",
             "subject":"Academia" }
     ]
 }
@@ -45,8 +45,7 @@ months.forEach((month, index) => {
 function updateMonthName(monthElement){
     var monthName = monthElement.getAttribute('data-month-name');
     var monthParent = monthElement.parentNode;
-    var index = Array.from(monthParent.children).indexOf(monthElement);
-    //console.log(monthName + ', ' + index);
+    //var index = Array.from(monthParent.children).indexOf(monthElement);
     var monthLabel = document.getElementById('month-label');
     monthLabel.innerText = monthName;
 }
@@ -74,11 +73,9 @@ function calcTimePercent(time){
     var totalMinutesDay = 24*60;
     timeArray = time.split(':');
     if (timeArray.length > 1){
-        //console.log(timeArray);
         var hours = parseInt(timeArray[0]);
         var minutes = parseInt(timeArray[1]);
         var totalMinutesToTime = hours*60 + minutes;
-        //console.log(totalMinutesToTime/totalMinutesDay*100);
     }
     return totalMinutesToTime/totalMinutesDay*100;
 }
@@ -97,21 +94,23 @@ function timeDiff(time1, time2){
         var minutes = parseInt(timeArray[1]);
         totalMinutes2 = hours*60 + minutes;
     }
-    //console.log(totalMinutes2 - totalMinutes1);
-    return totalMinutes2 - totalMinutes1;
+    var diffMinutes = totalMinutes2 - totalMinutes1;
+    var hours = Math.trunc(diffMinutes/60);
+    var minutes = diffMinutes - (hours*60);
+    var diffTime = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
+    return diffTime;
 }
 
 // Creates new calendar grid elements
 calendar = document.getElementById('calendar');
 
 function newDayElement(date, currentMonth){
-    //date = new Date();
     // <div class="month-grid-day"><span class="month-grid-day-label">01</span></div>
     var dayElement = document.createElement('div');
     dayElement.classList.add('month-grid-day');
-    if (!currentMonth)
+    if (!currentMonth) // If it is not a current month day, include the other-month class
         dayElement.classList.add('other-month');
-    if (date.getDay() == 0)
+    if (date.getDay() == 0) // If is sunday, includ the data-week-day attribute
         dayElement.setAttribute('data-week-day', 'dom');
     id = date.getFullYear();
     id += (date.getMonth()+1).toString().padStart(2, '0');
@@ -126,22 +125,18 @@ function newDayElement(date, currentMonth){
     // Label
 
     // Appointments
-    //dateYMD = parseInt(date.getFullYear());
-    //dateYMD += (date.getMonth()+1).toString().padStart(2, '0');
-    //dateYMD += date.getDate().toString().padStart(2, '0');
-    if (!isEmpty(appointments[[id]])){
+    if (!isEmpty(appointments[[id]])){ // The day data from the appointments object
         //console.log('ok: ' + JSON.stringify(appointments[dateYMD]));
         dayAppointments = appointments[id];
-        dayAppointments.forEach(function(app) {
-            //console.log(app['start']);
+        dayAppointments.forEach(function(app) { // Each appointments of the day
+            // <div class="appointment" style="top:45.65%; height:6.52%;"></div>
             var appDiv = document.createElement('div');
             appDiv.classList.add('appointment');
-            var startTimePercent = calcTimePercent(app['start']);
+            var startTimePercent = calcTimePercent(app['start']); // the percentage of the start time from the total minutes of the day - 12:00 is 50%
             appDiv.style.top = startTimePercent + '%';
             var duration = timeDiff(app['start'], app['end']);
-            totalMinutesDay = 24*60;
-            appDiv.style.height = duration/totalMinutesDay*100 + '%';
-            // <div class="appointment" style="top:45.65%; height:6.52%;"></div>
+            durationPercent = calcTimePercent(duration); // the percentage of the appointment interval from the total minutes of the day
+            appDiv.style.height = durationPercent + '%';
             dayElement.appendChild(appDiv);
         });
     }
@@ -173,31 +168,23 @@ makeMonthGrid(new Date('2021-12-1'));
 function makeMonthGrid(date){
     monthElement = newMonthElement(date);
 
-    // primeiro dia do grid: a primeira segunda-feira antes do primeiro dia do mês
+    // First day of the grid: the first monday before the first month day (if the first month day is not monday)
     firstDay = new Date(date.getYear(), date.getMonth(), 1);
     if (date.getDay() == 0)
         firstDay = decDate(date, 6);
     else
         firstDay = decDate(date, date.getDay()-1);
-    //console.log('---> ' + date.getDay() + ', ' + firstDay.toString());
     
-    // são 42 elementos na grade: 7 dias de semana e 6 linhas - 7 x 6 = 42
+    // The drid has 42 elements: 7 week days and 6 lines - 7 x 6 = 42
     i = 0;
     dateAux = new Date(firstDay);
     while (i < 42){
         currentMonth = (date.getMonth() == dateAux.getMonth());
         dayElement = newDayElement(dateAux, currentMonth);
         monthElement.appendChild(dayElement);
-        //console.log('-> ' + dateAux.toString());
         dateAux = incDate(dateAux, 1);
         i++;
     }
-    
     calendar.appendChild(monthElement);
     observer.observe(monthElement);
 }
-/*
-Criar elemento do mes
-Criar os elementos dos dias começando pela segunda-feira anterior ao dia 1, se esse dia não for segunda
-- Verificar o dia da semana do dia 1
-*/
