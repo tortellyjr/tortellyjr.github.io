@@ -8,6 +8,93 @@
     </head>
     <body>
         <style>
+        *{
+            padding: 1rem;
+              font-family: sans-serif;
+              letter-spacing: 1px;
+        }
+        img{
+          margin: 0px;
+        }
+        .card_jogos{
+          border: solid 1px green;
+          background-color: green;
+          color: white;
+          max-width: 500px;
+          margin: auto;
+        }
+        .card_jogos *{
+          padding: 0px;
+        }
+        .card_jogos .campeonato{
+          display: flex;
+          border: solid 0px white;
+          justify-content: space-between;
+          border-bottom: solid 1px darkgreen;
+          margin-bottom: 2rem;
+          padding-bottom: 1rem;
+          font-size: 80%;
+          color: lightyellow;
+        }
+        .card_jogos .campeonato div{
+          border: solid 0px yellow;
+          display: flex;
+          align-items: center;
+        }
+        .card_jogos .campeonato div img{
+          width: 1.5rem;
+          margin-right: 0.2rem;
+        }
+        .card_jogos .jogo{
+          border: solid 0px white;
+          display: flex;
+          justify-content: space-between
+        }
+        .card_jogos .jogo .time{
+          border: solid 0px yellow;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.5rem;
+          width: 8rem;
+        }
+        .card_jogos .jogo .time img{
+          width: 5rem;
+        }
+        .card_jogos .jogo .time span{
+          text-align: center;
+          border: solid 0px yellow;
+          flex-grow: 1;
+          align-content: center;
+        }
+        .card_jogos .jogo .versus{
+          border: solid 0px white;
+          flex-grow: 1;
+          display: flex;
+          gap: 0.5rem;
+          justify-content: center;
+          align-items: center;
+        }
+        .card_jogos .jogo .versus span:first-of-type, .card_jogos .jogo .versus span:last-of-type{
+          border: solid 0px white;
+          text-align: center;
+          font-size: 500%
+        }
+        .card_jogos .data_local{
+          border: solid 0px white;
+          border-top: solid 1px darkgreen;
+          margin-top: 2rem;
+          padding-top: 1rem;
+          font-size: 80%;
+          color: lightyellow;
+        }
+        .card_jogos .data_local span{
+          border: solid 0px yellow;
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
         </style>
         <main>
           <article class="card_jogos">
