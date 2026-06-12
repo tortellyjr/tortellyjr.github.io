@@ -16,16 +16,12 @@
           img{
               margin: 0px;
           }
-          *{
-            font-family: sans-serif;
-            letter-spacing: 1px;
-          }
           .campeonatos{
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
-            border: solid 1px red;
+            border: solid 0px red;
           }
           a{
             display: flex;
@@ -36,18 +32,23 @@
           }
           article{
             border: solid 1px #dddddd;
+            background-color: #f7f7fa;
             border-radius: 0.5rem;
             width: fit-content;
+            width: 8rem;
+            width: clamp(6rem, 11vw, 8rem);
             padding: 0.5rem;
           }
           article img{
-            width: 10rem;
+            width: clamp(6rem, 11vw, 8rem);
           }
           article span{
-            color: #707070;
-            font-size: 1.2rem;
-          }
-        </style>
+            border: solid 0px red;
+            color: #404040;
+            font-size: 2.5vw;
+            font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+            text-align: center;
+          }        </style>
         <main>
           <section class="campeonatos">
             <article>
