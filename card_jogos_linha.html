@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <!_-link rel="stylesheet" href="assets/style/grid6.css"-->
-        <title>Grid Test</title>
+        <title>Card Jogos Linha</title>
         <!--script src="assets/script/grid6.js"></script-->
     </head>
     <body>
@@ -22,13 +22,14 @@
           display: flex;
           border: solid 0px red;
           background-color: #023246;
+          border-radius: 0.3rem;
           color: white;
           padding: 0.5rem;
           gap: 0.5rem;
           justify-content: center;
         }
         article span{
-          
+          font-size: 0.8rem;
         }
         .campeonato{
           border: solid 0px blue;
@@ -38,7 +39,8 @@
           align-items: center;
         }
         .campeonato span{
-          font-size: 0.8rem;
+          color: darkgoldenrod;
+          font-size: 0.7rem;
         }
         .jogo{
           border: solid 0px green;
@@ -49,17 +51,18 @@
         .jogo span{
           align-self: center;
           text-align: center;
-          
         }
         .jogo span:first-of-type{
-          align-self: flex-start;
+          align-self: center;
           flex: 1;
           text-align: end;
+          font-weight: lighter;
         }
         .jogo span:last-of-type{
           align-self: center;
           flex: 1;
           text-align: start;
+          font-weight: lighter;
         }
         .data{
           border: solid 0px black;
@@ -69,22 +72,24 @@
           align-items: center;
         }
         .data span{
-          text-align: center;
-          font-size: 0.8rem;
+          border: solid 0px white;
+          text-align: right;
+          font-size: 0.7rem;
+          color: #888888;
         }
         </style>
         <main>
-          <article>
-            <div class="campeonato"><span>Brasileirão</span></div>
-            <div class="jogo"><span>Flamengo</span><span>X</span><span>Mirassol</span></div>
-            <div class="data"><span>10/10/1010</span></div>
-          </article>
-          <br>
-          <article>
-            <div class="campeonato"><span>Copa do Brasil</span></div>
-            <div class="jogo"><span>independiente del Valle</span><span>X</span><span>São Paulo</span></div>
-            <div class="data"><span>10/10/1010</span></div>
-          </article>
+            <article>
+              <div class="campeonato"><span>Brasileirão</span></div>
+              <div class="jogo"><span>Flamengo</span><span>2</span><span>X</span><span>0</span><span>Mirassol</span></div>
+              <div class="data"><span>10 Out 2026</span></div>
+            </article>
+            <br>
+            <article>
+              <div class="campeonato"><span>Copa do Brasil</span></div>
+              <div class="jogo"><span>independiente del Valle</span><span>X</span><span>São Paulo</span></div>
+              <div class="data"><span>10 Out 2026</span></div>
+            </article>
         </main>
     </body>
 </html>
