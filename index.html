@@ -7,10 +7,68 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="assets/style/sf.css">
     <script src="assets/script/sf.js"></script>
+    <script>
+      *{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+      }
+      article{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.2rem;
+        font-size: clamp(0.6rem, 2vw, 1rem);
+        border: solid 1px #cccccc;
+        border-radius: 0.3rem;
+        width: fit-content;
+      }
+      article div{
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+        background-color: #f7f7f7;
+        padding: 0.2em;
+      }
+      article div:first-of-type{
+        border-top-left-radius: 0.1em;
+        border-top-right-radius: 0.1em;
+      }
+      article div:last-of-type{
+        border-bottom-left-radius: 0.1em;
+        border-bottom-right-radius: 0.1em;
+      }
+      article div img{
+        width: 1.5em;
+        margin-right: 0.1em;
+      }
+      article div span{
+        min-width: 1.2em;
+        text-align: center;
+        border: solid 0px red;
+      }
+      article div span:first-of-type{
+        text-align: start;
+        min-width: 2.8em;
+        margin-right: 0.2em;
+      }
+      article div span:last-of-type{
+        color: #999999;
+        font-size: 0.8em;
+        flex-grow: 1;
+      }      
+    </script>
   </head>
   <body>
     <main>
-      Teste
+      <article>
+        <div>
+          <img src="https://tortellyjr.github.io/assets/img/asa.png" alt="">
+          <span>ASA</span><span>0</span><span>0</span><span>10</span>
+        </div>
+        <div>
+          <img src="https://tortellyjr.github.io/assets/img/azuriz.png" alt="">
+          <span>AZU</span><span>10</span><span>0</span><span>0</span>
+        </div>
+      </article>
     </main>
   </body>
 </html>
