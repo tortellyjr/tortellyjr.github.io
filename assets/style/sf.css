@@ -31,7 +31,7 @@ section.fases-finais svg{
   height: 100%;
   width: 100%;
 }
-div.confronto{
+div.confrontos{
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
