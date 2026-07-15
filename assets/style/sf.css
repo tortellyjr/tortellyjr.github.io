@@ -8,6 +8,23 @@ main{
     gap: 0.5rem;
     flex-wrap: wrap;    
 }
+section.fases-finais{
+  border: solid 1px red;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-bottom: 0.5rem;
+}
+div.confronto{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: solid 0px #cccccc;
+  padding: 0.3rem;
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  justify-content: space-around;
+  min-width: fit-content;
+}
 article{
     display: flex;
     flex-direction: column;
