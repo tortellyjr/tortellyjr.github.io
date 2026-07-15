@@ -8,32 +8,49 @@ main{
     gap: 0.5rem;
     flex-wrap: wrap;    
 }
+div.scroll{
+  overflow-x: scroll;
+  border: solid 0px blue;
+  height: fit-content;
+}
 section.fases-finais{
   border: solid 1px red;
   display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
+  flex-direction: column;
+  position: relative;
   margin-bottom: 0.5rem;
+  max-width: 100%;
+  min-width: fit-content;
+  background-color: white;
+}
+section.fases-finais svg{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 div.confronto{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5rem;
   border: solid 0px #cccccc;
-  padding: 0.3rem;
+  padding: 0.3em;
   font-size: clamp(0.6rem, 2vw, 1rem);
   justify-content: space-around;
   min-width: fit-content;
 }
 article{
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 0.2rem;
-    font-size: clamp(0.6rem, 2vw, 1rem);
-    border: solid 1px #cccccc;
-    border-radius: 0.3rem;
-    width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  padding: 0.2em;
+  border: solid 1px #cccccc;
+  background-color: white;
+  border-radius: 0.3em;
+  width: fit-content;
+  z-index: 1;
 }
 article div{
     display: flex;
