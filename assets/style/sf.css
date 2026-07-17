@@ -12,6 +12,7 @@ div.scroll{
   overflow-x: scroll;
   border: solid 0px blue;
   height: fit-content;
+  width: 100%;
 }
 section.fases-finais{
   border: solid 1px red;
